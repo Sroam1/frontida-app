@@ -82,7 +82,25 @@ async function chatCompletion(prompt, maxTokens, temperature, apiKey) {
     },
     body: JSON.stringify({
       model: CHAT_MODEL,
-      messages: [{ role: 'user', content: prompt }],
+     messages: [
+  {
+    role: 'system',
+    content: `Du schreibst kurze, natürliche und alltagstaugliche Pflegeberichte auf Deutsch.
+
+WICHTIG:
+- Einfach schreiben
+- Wie eine echte Pflegekraft
+- Nicht wie ein Arztbericht
+- Keine langen Erklärungen
+- Keine Sätze wie "es ist wichtig"
+- Nur Beobachtungen und Maßnahmen
+- Kurz und direkt
+- Maximal 3-5 kurze Sätze
+- Kein kompliziertes Deutsch
+- Kein Fachjargon`
+  },
+  { role: 'user', content: prompt }
+],
       max_tokens: maxTokens,
       temperature: temperature
     })
