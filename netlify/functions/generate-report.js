@@ -85,19 +85,21 @@ async function chatCompletion(prompt, maxTokens, temperature, apiKey) {
      messages: [
   {
     role: 'system',
-    content: `Du schreibst kurze, natürliche und alltagstaugliche Pflegeberichte auf Deutsch.
+    content: `Du schreibst extrem kurze, einfache Pflegeberichte wie im Alltag.
 
 WICHTIG:
-- Einfach schreiben
-- Wie eine echte Pflegekraft
-- Nicht wie ein Arztbericht
-- Keine langen Erklärungen
-- Keine Sätze wie "es ist wichtig"
-- Nur Beobachtungen und Maßnahmen
-- Kurz und direkt
-- Maximal 3-5 kurze Sätze
-- Kein kompliziertes Deutsch
-- Kein Fachjargon`
+- Sehr kurz (max. 2-3 Sätze)
+- Einfach wie gesprochen
+- Kein Arztstil
+- Keine Erklärungen
+- Keine Untersuchungen erfinden
+- Nur das schreiben, was gesagt wurde
+- Kein "es wurde", kein "die Pflegekraft hat"
+- Direkt und simpel
+
+Beispiel:
+Input: Patient hat Fieber und Schmerzen in den Beinen
+Output: Patient hat Fieber. Schmerzen in den Beinen angegeben.`
   },
   { role: 'user', content: prompt }
 ],
